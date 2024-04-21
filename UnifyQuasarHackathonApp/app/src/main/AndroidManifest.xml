@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Unify"
+        tools:targetApi="31">
+        <activity
+            android:name=".Presentations.StudentsDashBoard.Features.ClubChat.PersonalClubChat"
+            android:exported="false" />
+        <activity
+            android:name=".Presentations.StudentsDashBoard.Features.ClubChat.ClubChat"
+            android:exported="false" />
+        <activity
+            android:name=".Presentations.StudentsDashBoard.Features.Clubs"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".Presentations.StudentsDashBoard.Features.AllDocuments"
+            android:exported="false" />
+        <activity
+            android:name=".Presentations.StudentsDashBoard.Features.EventActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Presentations.StudentsDashBoard.Features.HostelLeaving"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PresentationsFaculty.UploadStudyMaterials"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Presentations.ChattingSystem.ChatScreen.PersonalChatScreen"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Presentations.ChattingSystem.ChatScreen.ChatsView"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".PresentationsFaculty.FacultyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Presentations.PostsandReels.ReelsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Presentations.PostsandReels.PostsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Presentations.LoginScreen.LoginScreen"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Presentations.MainHomePage.MainHomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main_home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Presentations.SignUpScreen.SignUpScreen"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Presentations.SplashScreen.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

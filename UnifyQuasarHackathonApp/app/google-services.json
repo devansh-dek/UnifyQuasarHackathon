@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "652821236479",
+    "project_id": "unify-f5df8",
+    "storage_bucket": "unify-f5df8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652821236479:android:1f857139f0b8a43ec15aca",
+        "android_client_info": {
+          "package_name": "com.example.unify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5FrA4Nr38m5NAejbKkxFJUHZeteOWVHs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
