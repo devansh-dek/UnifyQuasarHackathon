@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        #uploadedImage, #resultImage {
+            max-width: 90%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload an Image for Face Recognition</h1>
+    <input type="file" id="fileInput" accept="image/*">
+    <button onclick="uploadImage()">Upload and Analyze</button>
+    <h2>Uploaded Image:</h2>
+    <img id="uploadedImage">
+    <h2>Processed Image with Recognized Faces:</h2>
+    <img id="resultImage">
+
+    <script>
+        function uploadImage() {
+            const fileInput = document.getElementById('fileInput');
+            const uploadedImage = document.getElementById('uploadedImage');
+            const resultImage = document.getElementById('resultImage');
+
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const formData = new FormData();
+                formData.append('image', file);
+
+                // Display the uploaded image
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    uploadedImage.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+
+                // Send the file to the server
+                fetch('/predict', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    resultImage.src = 'data:image/jpeg;base64,' + data.image;
+                })
+                .catch(error => console.error('Error:', error));
+            } else {
+                alert('Please select a file to upload.');
+            }
+        }
+    </script>
+</body>
+</html>
